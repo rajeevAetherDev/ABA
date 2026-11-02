@@ -1,0 +1,23 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 14, 2016, 12:48:40 PM
+    Author     : aether2
+*/
+    .wraplist {
+        padding: 0px;
+    margin: 0px;
+    padding-left: 0px; }
+    .wraplist .btn-primary { width: 100%; padding: 20px 0; margin-bottom: 10px;} 
+    .wraplist .btn-warning { width: 100%; padding: 20px 0; margin-bottom: 10px;} 
+    .wraplist .btn-danger { width: 100%; padding: 20px 0; margin-bottom: 10px;} 
+    .wraplist .btn-info { width: 100%; padding: 20px 0; margin-bottom: 10px;} 
+     .wraplist .btn-success { width: 100%; padding: 20px 0; margin-bottom: 10px;} 
+      .wraplist .btn-default { width: 100%; padding: 20px 0; margin-bottom: 10px;} 
+    .nopadding { padding: 0;} .nomargin { margin: 0 ;}
+    .wraplist li  a .fa { font-size: 18px;}
+    .wraplist li a{ font-size: 12px;}
+    .error-message { color: red;}

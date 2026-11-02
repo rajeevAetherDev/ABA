@@ -1,0 +1,113 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 14, 2016, 12:48:40 PM
+    Author     : aether2
+*/
+.product_buttons { position: fixed; display: block; width: 50px; background-color: #333; border-radius: 5px; color: #000; clear: both; float: none; right:2%; top:35%;}
+.product_buttons span { float: left; width: 44px; font-size: 44px; color:#fff; cursor: pointer; margin-left:5px;}
+.product_buttons span.upbtn { margin-bottom: 40px;}
+.order_buttons{ position: fixed; display: block; width: 40px; background-color: #333; border-radius: 5px; color: #000; clear: both; float: none; left:0; top:35%;}
+.order_buttons span { float: left; width: 34px; font-size: 34px; color:#fff; cursor: pointer; margin-left:5px;}
+.order_buttons span.oupbtn { margin-bottom: 40px;}
+.navbar-aether
+{
+    background-image: -webkit-linear-gradient(top,#000 0,#111 100%);
+    background-image: -o-linear-gradient(top,#000 0,#111 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#000),to(#111));
+    background-image: linear-gradient(to bottom,#000 0,#111 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000ff', endColorstr='#0008f8f8', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    background-repeat: repeat-x;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,.15),0 1px 5px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 0 rgba(0,0,0,.15),0 1px 5px rgba(0,0,0,.075);
+    border-color: #222;
+    background-color: #111;
+}
+.navbar-aether a { color : #fff;}
+.btn-showtime { background-color: #111; color: #fff;}
+.nav > li > a:focus, .nav > li > a:hover {
+    text-decoration: none;
+    background-color: #111;
+}
+.panel-aether {
+    border-color: #999;
+}
+.panel-aether > .panel-heading {
+    background-image: -webkit-linear-gradient(top,#999 0,#777 100%);
+    background-image: -o-linear-gradient(top,#999 0,#777 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#999),to(#777));
+    background-image: linear-gradient(to bottom,#999 0,#777 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2e6da4', GradientType=0);
+    background-repeat: repeat-x;
+}
+.panel-aether > .panel-heading {
+    color: #fff;
+    background-color: #999;
+    border-color: #999;
+    padding: 0;
+}
+.panel-aether > .panel-body { position: relative; padding: 0px 15px;}
+.panel-aether > .panel-body table tr td a { color: #111; }
+.panel-aether > .panel-body .productlistview{ display: block; float: left; margin-right: 0; text-align: center;}
+.panel-aether > .panel-body .productbutton {  text-decoration: none; border: 1px solid #666; padding: 15px;  margin:0; color:#fff; display: table;
+    position: relative; font-size:20px;   height: 170px;
+width: 175px; }
+.panel-aether > .panel-body .productbutton span {
+    display: table-cell;
+    text-align:center;
+    vertical-align: middle;
+}
+.btn-pay {
+    padding: 6px 30px;
+    color: #fff;
+    background-color: #662e91;
+    border-color: #111;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+-webkit-box-shadow: inset 0 1px 0 rgba(102, 46, 145,.15),0 1px 1px rgba(95, 43, 136,.075);
+box-shadow: inset 0 1px 0 rgba(102, 46, 145,.15),0 1px 1px rgba(95, 43, 136,.075);
+background-image: -webkit-linear-gradient(top,#662e91 0,#5f2b88 100%);
+background-image: -o-linear-gradient(top,#662e91 0,#5f2b88 100%);
+background-image: -webkit-gradient(linear,left top,left bottom,from(#662e91),to(#5f2b88));
+background-image: linear-gradient(to bottom,#662e91 0,#5f2b88 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff265a88', GradientType=0);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+background-repeat: repeat-x;
+margin-right: 15px;
+}
+.btn-pay:hover { color: #fff; }
+.panel-aether > .panel-heading  a {
+width: 100%; padding: 10px 0px; border-bottom: 1px solid transparent;
+ display: inline-block; text-decoration: none; color: #111; font-size:18px;
+ text-align: center; }
+#aether_drinks , #aether_foods { width: 100%; padding: 10px 0px; border-bottom: 1px solid transparent;
+ display: inline-block; text-decoration: none; color: #111; font-size:18px; cursor: pointer; }
+#aether_drinks{ border-top-left-radius: 3px; border-top-right-radius: 0;}
+#aether_foods { border-top-left-radius: 0; border-top-right-radius: 3px;}
+#aether_drinks.active, #aether_foods.active  { color: #fff; background-color: #111;}
+.pquantity { border-radius: 50%; border: 1px solid #171717; background-color: #ebebeb; height: 30px;
+width: 30px;
+display: inline-block;
+padding: 5px 10px;}
+.pprice {border-radius: 10%; border: 1px solid #171717;  padding:5px;}
+.btn-clear
+{
+    padding: 6px 30px;
+  color: #fff;
+    background-color: #383838;
+    border-color: #111;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);  
+}
+.btn-clear:hover { color: #fff;}
+.tbtd1 { display:  inline-block; float: left; }
+.tbtd2 { display:  inline-block; float: right; }
+.tbtr1 { border-top: 1px dotted #383838; }
+.tbtr4 {border-top: 1px dotted #383838; font-weight: bold; }
+.tbtr4 .tbtd1 { padding:5px 0 !important; }
+.panel-middle{ position: relative; display: block;}
+.panel-middle table {position: absolute; bottom: 0; width: 100%;} 
+.tbtr1, .tbtr2, .tbtr3, .tbtr4 { padding: 0 5px;}

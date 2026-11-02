@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h2 class="page-title">Bill Wise Summary Report</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <?php echo $this->Form->create('Search', array('url' => 'bill_wise_summary'));
+                        $options = [];
+                        if ($this->Session->read('Auth.User.role') == 'admin') {
+                            $options[''] = 'All Stores';
+                        }
+                        foreach ($users as $user) {
+                            $options[$user['Location']['id']] = $user['Location']['name'];
+                        }
+                        echo $this->Form->input('cashier', array('div' => array('class' => 'form-group'), 'label' => 'Select Store', 'class' => 'form-control', 'options' => $options, 'id' => 'cashier'));
+                        echo $this->Form->input('startdate', array('div' => array('class' => 'form-group'), 'label' => 'Select Date', 'class' => 'form-control calendarmultiple', 'id' => 'startdate', 'name' => 'daterange', 'required' => 'required', 'value' => $startdate));
+                        echo $this->Form->button('View', array('class' => 'btn btn-info', 'type' => 'submit'));
+                        echo "&nbsp;" . $this->Form->button('Export', array('class' => 'btn btn-info', 'type' => 'button', 'id' => 'exportdata'));
+                        echo $this->Form->end();
+                    ?>
+                </div>
+
+                <div class="table-responsive mt-4">
+                    <table id="example" class="display table table-hover table-condensed" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Bill No</th>
+                                <th>Store</th>
+                                <th>Payment Type</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Item Total</th>
+                                <th>Bill Price</th>
+                                <th>Bill Discount</th>
+                                <th>Bill Tax</th>
+                                <th>Bill Amount</th>
+                                <th>Status</th>  <!-- ✅ new -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        $x = 1;
+                        foreach ($transactions as $tr):
+                            $status = (int)($tr['t']['status'] ?? 2);
+                            // ✅ Badge config
+                            if ($status === 0) {
+                                $badgeClass = 'badge-danger';
+                                $badgeLabel = 'Cancelled';
+                            } elseif ($status === 1) {
+                                $badgeClass = 'badge-warning';
+                                $badgeLabel = 'Pending';
+                            } else {
+                                $badgeClass = 'badge-success';
+                                $badgeLabel = 'Completed';
+                            }
+                        ?>
+                            <tr>
+                                <td><?= $x++ ?></td>
+                                <td><?= h($tr['t']['orderno']) ?></td>
+                                <td><?= h($tr[0]['cashier']) ?></td>
+                                <td><?= h($tr[0]['type']) ?></td>
+                                <td><?= date('d-m-Y', strtotime($tr['t']['created'])) ?></td>
+                                <td><?= date('h:i A', strtotime($tr['t']['created'])) ?></td>
+                                <td><?= number_format((float)($tr[0]['quantity'] ?? 0), 2) ?></td>
+                                <td><?= number_format((float)($tr['t']['price'] ?? 0), 2) ?></td>
+                                <td><?= number_format((float)($tr['t']['discount'] ?? 0), 2) ?></td>
+                                <td><?= number_format((float)($tr['t']['total_tax'] ?? 0), 2) ?></td>
+                                <td><?= number_format((float)($tr['t']['amount'] ?? 0), 2) ?></td>
+                                <td>  <!-- ✅ new -->
+                                    <span class="badge <?= $badgeClass ?>">
+                                        <?= $badgeLabel ?>
+                                    </span>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <script>
+                    $("#exportdata").click(function () {
+                        var sdate   = $("#startdate").val();
+                        var cashier = $("#cashier").val();
+                        window.open('<?php echo $this->base; ?>/report/bill_wise_summary_export?sdate=' + sdate + '&cashier=' + cashier, '_blank');
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>

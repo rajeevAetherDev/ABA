@@ -1,0 +1,13 @@
+#main-content{
+    margin-left:265px;
+    margin-top:80px;
+}
+
+.fade:not(.show){
+    opacity: 1!important;
+}
+
+.alert-error{
+    background-color:#f44336!important;
+    color:white;
+}
